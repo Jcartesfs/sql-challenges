@@ -24,3 +24,9 @@ SELECT
      ORDER BY salary asc
      LIMIT 1
 ;
+
+
+-- Mejor opción
+SELECT MAX(Salary) AS SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT MAX(Salary) FROM Employee)
